@@ -64,22 +64,8 @@
   // 結束拉下布幕 有展示球; 無展示球
   // window.cc.Final(list) or window.cc.Final();
   window.addEventListener('message', function(e) {
-    window.cc.Input(e.data, 10);
-    console.log('start')
-    // if(e.origin !== 'https://xxxxxxx.tw') {
-    //   alert('資料來源錯誤');
-    //   return false;
-    // }
-    // // 來源網址是指定的網域時
-    // else {
-    //   // 拿傳來的參數（e.data）
-    //   const data = e.data;
-    // }
-    setTimeout(() => {
-      window.cc.Final(e.data)
-      console.log('Final')
-      // parent.postMessage('message', 'http://127.0.0.1:8000/#/game');
-    }, 15000)
+    window.cc.Input(e.data, 60);
+    console.log('start_2')
   }, false);
 </script>
 
