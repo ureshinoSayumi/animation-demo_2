@@ -55,18 +55,20 @@
 <script>
   System.import('./index.js')
     .then(res => {
-      console.log('System.import_2')
+      console.log('System.import_2.1')
       // parent.postMessage('isLoading', '*');
+      window.addEventListener('message', function(e) {
+        window.cc.Input(e.data, 60);
+        console.log('start')
+        console.log(e.data)
+      }, false);
     })
     .catch(function(err) { console.error(err); })
   // 輸入號碼
   // window.cc.Input(list,duration, resetDelay);
   // 結束拉下布幕 有展示球; 無展示球
   // window.cc.Final(list) or window.cc.Final();
-  window.addEventListener('message', function(e) {
-    window.cc.Input(e.data, 60);
-    console.log('start_2')
-  }, false);
+ 
 </script>
 
 </body>
