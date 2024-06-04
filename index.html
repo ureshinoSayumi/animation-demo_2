@@ -55,12 +55,16 @@
 <script>
   System.import('./index.js')
     .then(res => {
-      console.log('System.import_3.0')
+      console.log('System.import_4.0')
       // parent.postMessage('isLoading', '*');
       window.addEventListener('message', function(e) {
+        if (e.data.length === 0 || !e.data) {
+          console.error('Animation Error: ', e.data)
+          return
+        }
         window.cc.Input(e.data, 60);
-        console.log('start')
-        console.log(e.data)
+        console.log('Animation start')
+        console.log('Animation Ball', e.data)
       }, false);
     })
     .catch(function(err) { console.error(err); })
