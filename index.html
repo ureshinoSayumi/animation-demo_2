@@ -55,11 +55,12 @@
 <script>
   System.import('./index.js')
     .then(res => {
-      console.log('System.import_4.0')
+      console.log('System.import_4.1')
       // parent.postMessage('isLoading', '*');
       window.addEventListener('message', function(e) {
-        if (e.data.length === 0 || !e.data) {
-          console.error('Animation Error: ', e.data)
+        console.log('Animation e', e)
+        if (!e.data) {
+          console.log('Animation 開獎資料錯誤: ', e.data)
           return
         }
         window.cc.Input(e.data, 60);
