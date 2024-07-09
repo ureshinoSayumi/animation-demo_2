@@ -55,17 +55,16 @@
 <script>
   System.import('./index.js')
     .then(res => {
-      console.log('System.import_4.1')
-      // parent.postMessage('isLoading', '*');
+      console.log('Animation_4.2')
       window.addEventListener('message', function(e) {
         console.log('Animation e', e)
-        if (!e.data) {
+        if (!Array.isArray(e.data)) {
           console.log('Animation 開獎資料錯誤: ', e.data)
           return
         }
+        console.log('Animation start', e.data)
         window.cc.Input(e.data, 60);
-        console.log('Animation start')
-        console.log('Animation Ball', e.data)
+        console.log('Animation runing')
       }, false);
     })
     .catch(function(err) { console.error(err); })
